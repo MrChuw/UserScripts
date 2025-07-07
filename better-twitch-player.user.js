@@ -1,14 +1,16 @@
 // ==UserScript==
-// @name         Better Twitch Player
-// @namespace    http://tampermonkey.net/
-// @version      3.1
-// @description  Volume scroll, Middle Click to Mute, Auto Theatre Mode, Remove Bits and TopBar, Prevent Pause on unfocus, Force Quality "Source".
-// @author       MrChuw
-// @match        https://www.twitch.tv/*
-// @match        https://player.twitch.tv/*
-// @grant        none
-// @updateURL    https://github.com/MrChuw/UserScripts/raw/main/better-twitch-player.user.js
-// @downloadURL  https://github.com/MrChuw/UserScripts/raw/main/better-twitch-player.user.js
+// @name            Better Twitch Player
+// @namespace       http://tampermonkey.net/
+// @version         3.1
+// @description     Volume scroll, Middle Click to Mute, Auto Theatre Mode, Remove Bits and TopBar, Prevent Pause on unfocus, Force Quality "Source".
+// @author          MrChuw
+// @match           https://www.twitch.tv/*
+// @match           https://player.twitch.tv/*
+// @grant           none
+// @updateURL       https://github.com/MrChuw/UserScripts/raw/main/better-twitch-player.user.js
+// @downloadURL     https://github.com/MrChuw/UserScripts/raw/main/better-twitch-player.user.js
+// @tag             twitch
+// @tag             player
 // ==/UserScript==
 
 // Uses code from: https://greasyfork.org/en/scripts/383093-twitch-disable-automatic-video-downscale

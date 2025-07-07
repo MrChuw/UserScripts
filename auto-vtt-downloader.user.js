@@ -1,14 +1,16 @@
 // ==UserScript==
-// @name         Auto VTT Downloader
-// @namespace    http://tampermonkey.net/
-// @version      1.5
-// @description  Automatically downloads VTT files loaded on the page, avoiding duplicates. Supports dynamic domain list from URL.
-// @author       MrChuw
-// @match        *://*/*
-// @grant        GM_xmlhttpRequest
-// @grant        GM_download
-// @updateURL    https://github.com/MrChuw/UserScripts/raw/main/auto-vtt-downloader.user.js
-// @downloadURL  https://github.com/MrChuw/UserScripts/raw/main/auto-vtt-downloader.user.js
+// @name            Auto VTT Downloader
+// @namespace       http://tampermonkey.net/
+// @version         1.5
+// @description     Automatically downloads VTT files loaded on the page, avoiding duplicates. Supports dynamic domain list from URL.
+// @author          MrChuw
+// @match           *://*/*
+// @grant           GM_xmlhttpRequest
+// @grant           GM_download
+// @updateURL       https://github.com/MrChuw/UserScripts/raw/main/auto-vtt-downloader.user.js
+// @downloadURL     https://github.com/MrChuw/UserScripts/raw/main/auto-vtt-downloader.user.js
+// @tag             download
+// @tag             subtitles
 // ==/UserScript==
 
 (function() {
@@ -133,9 +135,9 @@
                 onload: function(response) {
                     if (response.status === 200) {
                         allowedDomains = response.responseText
-                            .split('\n')
-                            .map(line => line.trim())
-                            .filter(line => line.length && !line.startsWith('#'));
+                        .split('\n')
+                        .map(line => line.trim())
+                        .filter(line => line.length && !line.startsWith('#'));
                         log('Loaded allowed domains:', allowedDomains);
                         callback();
                     } else {

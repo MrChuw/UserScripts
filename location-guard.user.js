@@ -18,6 +18,9 @@
 // @grant           GM.removeValueChangeListener
 // @updateURL       https://github.com/MrChuw/UserScripts/raw/main/location-guard.user.js
 // @downloadURL     https://github.com/MrChuw/UserScripts/raw/main/location-guard.user.js
+// @tag             privacy
+// @tag             location
+// @tag             spoof
 // ==/UserScript==
 
 // Original version by: https://github.com/SukkaW/location-guard-ng
