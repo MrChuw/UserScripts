@@ -7,9 +7,9 @@ To use any script install an extension such as [Tampermonkey](https://www.tamper
 
 |         script         |                                        install                                         |
 | :--------------------: | :------------------------------------------------------------------------------------: |
-|  Better Twitch Player  | [Install](https://github.com/MrChuw/UserScripts/raw/main/better-twitch-player.user.js) |
-| Location Guard (No UI) |    [Install](https://github.com/MrChuw/UserScripts/raw/main/location-guard.user.js)    |
-|  Auto VTT Downloader   | [Install](https://github.com/MrChuw/UserScripts/raw/main/auto-vtt-downloader.user.js)  |
+|  [Better Twitch Player](https://github.com/MrChuw/UserScripts#better-twitch-player)  | [Install](https://github.com/MrChuw/UserScripts/raw/main/better-twitch-player.user.js) |
+| [Location Guard (No UI)](https://github.com/MrChuw/UserScripts##location-guard-no-ui) |    [Install](https://github.com/MrChuw/UserScripts/raw/main/location-guard.user.js)    |
+|  [Auto VTT Downloader](https://github.com/MrChuw/UserScripts#auto-vtt-downloader)   | [Install](https://github.com/MrChuw/UserScripts/raw/main/auto-vtt-downloader.user.js)  |
 
 ---
 
