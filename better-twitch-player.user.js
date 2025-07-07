@@ -7,6 +7,8 @@
 // @match        https://www.twitch.tv/*
 // @match        https://player.twitch.tv/*
 // @grant        none
+// @updateURL    https://github.com/MrChuw/UserScripts/raw/main/better-twitch-player.user.js
+// @downloadURL  https://github.com/MrChuw/UserScripts/raw/main/better-twitch-player.user.js
 // ==/UserScript==
 
 // Uses code from: https://greasyfork.org/en/scripts/383093-twitch-disable-automatic-video-downscale
@@ -246,8 +248,8 @@
 
             const currentVolume = video.volume;
             const newVolume = event.deltaY < 0
-                ? currentVolume + VOLUME_STEP
-                : currentVolume - VOLUME_STEP;
+            ? currentVolume + VOLUME_STEP
+            : currentVolume - VOLUME_STEP;
 
             updateVolume(newVolume);
         };
@@ -273,12 +275,12 @@
             await sleep(500);
 
             const qualityBtn = Array.from(document.querySelectorAll('button[role="menuitem"]'))
-                .find(el => el.textContent.includes('Quality'));
+            .find(el => el.textContent.includes('Quality'));
             qualityBtn?.click();
             await sleep(500);
 
             const sourceOption = Array.from(document.querySelectorAll('div[role="menuitemradio"]'))
-                .find(el => el.textContent.includes('Source'));
+            .find(el => el.textContent.includes('Source'));
             sourceOption?.click();
             await sleep(500);
             settingsBtn.click();
