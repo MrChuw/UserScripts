@@ -14,7 +14,7 @@
 (function() {
     'use strict';
 
-    const ENABLE_LOG = true;
+    const ENABLE_LOG = false;
 
     // Can be a static array OR a string URL to a raw list (e.g., Pastebin Raw, Gist Raw)
     const allowedDomainsSource = "https://example.org//raw/your-paste-id"; // Or: ["https://example.com/"]
