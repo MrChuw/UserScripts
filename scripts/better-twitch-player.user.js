@@ -339,7 +339,7 @@
         setTimeout(async () => {
             if (!isOnTwitchPlayer()) {
                 await enableTheatreMode();
-            }
+            };
             removeTargetElements();
 
             findPlayerElements();
