@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Better Twitch Player
 // @namespace       http://tampermonkey.net/
-// @version         3.1.1
+// @version         3.1.2
 // @description     Volume scroll, Middle Click to Mute, Auto Theatre Mode, Remove Bits and TopBar, Prevent Pause on unfocus, Force Quality "Source".
 // @author          MrChuw
 // @match           https://www.twitch.tv/*
@@ -22,8 +22,14 @@
     // ======================== CONFIG ========================
     const ENABLE_LOG = false;
     const VOLUME_STEP = 0.01;
-    const INITIAL_DELAY_MS = 5000;
     const doOnlySetting = false;
+    let INITIAL_DELAY_MS = 5000;
+
+    // ============TwitchAdSolutions Detector===================
+    const uWin = typeof unsafeWindow !== 'undefined' ? unsafeWindow : window;
+    const twitchAdSolutionsDetected = typeof uWin.twitchAdSolutionsVersion !== 'undefined';
+    INITIAL_DELAY_MS = twitchAdSolutionsDetected ? 12000 : INITIAL_DELAY_MS;
+
     // ========================================================
 
     let video = null;
@@ -81,7 +87,6 @@
     function isOnChannelPage() {
         return isOnTwitchPlayer() || isOnTwitchChannelPage();
     }
-
 
     function overrideVisibilityAndAutoPlay(doOnlySetting) {
         log('⚠️overrideVisibilityAndAutoPlay');
@@ -221,7 +226,6 @@
         };
     }
 
-
     function findPlayerElements() {
         video = document.querySelector('video');
         slider = document.querySelector('input[data-a-target="player-volume-slider"]');
@@ -252,7 +256,7 @@
         slider.dispatchEvent(new Event('input', { bubbles: true }));
         slider.dispatchEvent(new Event('change', { bubbles: true }));
 
-        showVolumeOverlay(newVolume); // 👈 aqui
+        showVolumeOverlay(newVolume);
 
         log(`🔊 Volume set to ${Math.round(newVolume * 100)}%`);
     }
@@ -302,7 +306,7 @@
     }
 
     async function forceSourceQualityByClick() {
-        if (isOnTwitchPlayer()) {
+        if (!isOnTwitchPlayer()) {
             return;
         }
         log('🎯 Trying to force quality Source via UI');
@@ -330,6 +334,8 @@
     }
 
     async function initializeScript() {
+        log("TwitchAdSolutions is " + (twitchAdSolutionsDetected ? "active" : "inactive") + ", using delay:", INITIAL_DELAY_MS);
+
         if (!isOnChannelPage()) {
             log('⛔ Not on a channel page. Exiting script.');
             return;
@@ -351,10 +357,7 @@
                 overrideVisibilityAndAutoPlay(doOnlySetting);
                 setQualitySettings();
                 window.addEventListener('popstate', setQualitySettings);
-
-                if (isOnTwitchPlayer()) {
-                    forceSourceQualityByClick();
-                }
+                forceSourceQualityByClick();
             }, 1000);
 
         }, INITIAL_DELAY_MS);

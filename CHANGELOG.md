@@ -8,6 +8,11 @@
 
 ## better-twitch-player.user.js
 
+### [3.1.2] - 2025-07-08
+
+- Minor: Add TwitchAdSolutions detector.
+- Bugfix: Player Check on manual resolution change.
+
 ### [3.1.1] - 2025-07-07
 
 - Minor: Small Formatting.
