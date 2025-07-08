@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Better Twitch Player
 // @namespace       http://tampermonkey.net/
-// @version         3.1.2
+// @version         3.1.3
 // @description     Volume scroll, Middle Click to Mute, Auto Theatre Mode, Remove Bits and TopBar, Prevent Pause on unfocus, Force Quality "Source".
 // @author          MrChuw
 // @match           https://www.twitch.tv/*
@@ -173,7 +173,7 @@
 
     async function enableTheatreMode() {
         try {
-            const theatreButton = await waitForElement('button[aria-label="Theatre Mode (alt+t)"]');
+            const theatreButton = await waitForElement('button[aria-label*="(alt+t)"]');
             theatreButton.click();
             log('🎭 Theatre mode enabled');
         } catch (e) {
@@ -224,6 +224,11 @@
                 logLabel: 'Twitch right control last button'
             });
         };
+
+        observeAndAlwaysRemove('.extensions-video-overlay-size-container', {
+            removeParent: true,
+            logLabel: 'Player Extensions'
+        })
     }
 
     function findPlayerElements() {
@@ -278,19 +283,22 @@
     }
 
     function attachListeners() {
-        window.onwheel = (event) => {
-            if (!video) {
-                return;
-            }
+        if (!video) {
+            return;
+        }
+
+        const handleWheel = (event) => {
             event.preventDefault();
 
             const currentVolume = video.volume;
-            const newVolume = event.deltaY < 0
-            ? currentVolume + VOLUME_STEP
-            : currentVolume - VOLUME_STEP;
+            const newVolume = event.deltaY < 0 
+                ? currentVolume + VOLUME_STEP 
+                : currentVolume - VOLUME_STEP;
 
             updateVolume(newVolume);
         };
+
+        window.addEventListener('wheel', handleWheel, { passive: false });
 
         window.onmousedown = (event) => {
             if (event.button === 1) {
@@ -350,8 +358,8 @@
 
             findPlayerElements();
 
-            const observer = new MutationObserver(findPlayerElements);
-            observer.observe(document.body, { childList: true, subtree: true });
+            // const observer = new MutationObserver(findPlayerElements);
+            // observer.observe(document.body, { childList: true, subtree: true });
 
             setTimeout(() => {
                 overrideVisibilityAndAutoPlay(doOnlySetting);

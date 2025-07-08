@@ -10,6 +10,11 @@
 
 ### [3.1.2] - 2025-07-08
 
+- Minor: Better handler of mouse wheel.
+- Minor: Better Auto Theater Mode.
+
+### [3.1.2] - 2025-07-08
+
 - Minor: Add TwitchAdSolutions detector.
 - Bugfix: Player Check on manual resolution change.
 
