@@ -27,3 +27,11 @@
 ---
 
 ## location-guard.user.js
+
+---
+
+## youtube-shorts-remover-tampermonkey.user.js
+
+### [base.1.3] - 2025-08-13
+
+- Minor: Add option to redirect short link to normal youtube page.
