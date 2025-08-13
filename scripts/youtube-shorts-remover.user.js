@@ -8,8 +8,8 @@
 // @license      MIT
 // @match        https://www.youtube.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
-// @updateURL    https://raw.githubusercontent.com/MrChuw/UserScripts/raw/main/scripts/youtube-shorts-remover-tampermonkey.user.js
-// @downloadURL  https://raw.githubusercontent.com/MrChuw/UserScripts/raw/main/scripts/youtube-shorts-remover-tampermonkey.user.js
+// @updateURL    https://raw.githubusercontent.com/MrChuw/UserScripts/raw/main/scripts/youtube-shorts-remover.user.js
+// @downloadURL  https://raw.githubusercontent.com/MrChuw/UserScripts/raw/main/scripts/youtube-shorts-remover.user.js
 // @grant        none
 // ==/UserScript==
 

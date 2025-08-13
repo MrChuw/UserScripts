@@ -6,12 +6,12 @@ This is a collection of userscript that I have created myself or modified to fit
 
 To use any script install an extension such as [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/), then click “Install” in the table below.
 
-|                                         script                                         |                                                    install                                                    |
-| :------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|   [Better Twitch Player](https://github.com/MrChuw/UserScripts#better-twitch-player)   |        [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/better-twitch-player.user.js)         |
-|  [Location Guard (No UI)](https://github.com/MrChuw/UserScripts#location-guard-no-ui)  |           [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/location-guard.user.js)            |
-|    [Auto VTT Downloader](https://github.com/MrChuw/UserScripts#auto-vtt-downloader)    |         [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/auto-vtt-downloader.user.js)         |
-| [YouTube Shorts Remover](https://github.com/MrChuw/UserScripts#youtube-shorts-remover) | [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-shorts-remover-tampermonkey.user.js) |
+|                                             script                                             |                                                    install                                                    |
+| :--------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
+|   [Better Twitch Player](https://github.com/MrChuw/UserScripts#better-twitch-player-install)   |        [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/better-twitch-player.user.js)         |
+|  [Location Guard (No UI)](https://github.com/MrChuw/UserScripts#location-guard-no-ui-install)  |           [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/location-guard.user.js)            |
+|    [Auto VTT Downloader](https://github.com/MrChuw/UserScripts#auto-vtt-downloader-install)    |         [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/auto-vtt-downloader.user.js)         |
+| [YouTube Shorts Remover](https://github.com/MrChuw/UserScripts#youtube-shorts-remover-install) | [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-shorts-remover.user.js) |
 
 ---
 
@@ -24,20 +24,20 @@ I recommend using ```https://player.twitch.tv/?channel=streamernamehere&parent=t
 
 ---
 
-## Location Guard (No UI) ([Install](https://github.com/MrChuw/UserScripts/raw/scripts/main/location-guard.user.js))
+## Location Guard (No UI) ([Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/location-guard.user.js))
 
 Its just a modified version of [Location Guard Ng](https://github.com/SukkaW/location-guard-ng), without the UI/Site configs.
 
 ---
 
-## Auto VTT Downloader ([Install](https://github.com/MrChuw/UserScripts/raw/scripts/main/auto-vtt-downloader.user.js))
+## Auto VTT Downloader ([Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/auto-vtt-downloader.user.js))
 
 Used to automatically download `.vtt` files.  
 I made it to download subtitles for videos from when I was in college.
 
 ---
 
-## YouTube Shorts Remover ([Install](https://github.com/MrChuw/UserScripts/raw/scripts/main/youtube-shorts-remover-tampermonkey.user.js))
+## YouTube Shorts Remover ([Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-shorts-remover.user.js))
 
 Its just a modified version of [YouTube Shorts Remover](https://github.com/Mr-Comand/youtube-shorts-remover-tampermonkey), adding a option to redirect a shorts url to normal Youtube page.
 
