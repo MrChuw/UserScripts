@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube short remover
 // @namespace    http://tampermonkey.net/
-// @version      base.1.3
+// @version      base.1.4
 // @description  Removes Youtube shorts from search results and watch page, but without a configuration menu.
 // @author       MrChuw
 // @author       Mr_Comand
@@ -67,7 +67,7 @@
 
     // Define the regex pattern for the YouTube shorts pages
     //https://www.youtube.com/shorts/*
-    var youtubeShortPagePattern = /^https?:\/\/(www\.)?youtube\.com\/shorts.*$/;
+    var youtubeShortPagePattern = /^https?:\/\/(?:www\.)?youtube\.com\/shorts\/([^/?#]+)/;
 
     // Define the regex pattern for the YouTube search page
     //https://www.youtube.com/shorts/*
@@ -214,7 +214,7 @@
         if (config.c_sendHome) {
             window.location.href = "https://www.youtube.com/";
         } else {
-            window.location.href = window.location.href.replace(youtubeShortIdPattern, "https://www.youtube.com/watch?v=$1");
+            window.location.href = window.location.href.replace(youtubeShortPagePattern, "https://www.youtube.com/watch?v=$1");
         }
     }
 

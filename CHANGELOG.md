@@ -35,3 +35,7 @@
 ### [base.1.3] - 2025-08-13
 
 - Minor: Add option to redirect short link to normal youtube page.
+
+### [base.1.4] - 2025-08-13
+
+- Minor: Forgot to change the regex.
