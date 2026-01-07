@@ -47,4 +47,5 @@ Its just a modified version of [YouTube Shorts Remover](https://github.com/Mr-Co
 ## Vibe Code Notify ([Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/vibe-code-notify.user.js))
 
 “i used the AI to destroy the AI” - by Mm2PL
+
 Will analyze the github repo trying to find any slop config file.
