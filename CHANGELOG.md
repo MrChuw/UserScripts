@@ -38,4 +38,14 @@
 
 ### [base.1.4] - 2025-08-13
 
-- Minor: Forgot to change the regex.
+- Minor: Forgot to change the shorts url regex.
+
+---
+
+## vibe-code-notify.user.js
+
+### [1.0] - 2026-01-07
+
+- First commit.
+
+---
