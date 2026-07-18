@@ -14,7 +14,7 @@ To use any script install an extension such as [Tampermonkey](https://www.tamper
 | [YouTube Shorts Remover](https://github.com/MrChuw/UserScripts#youtube-shorts-remover-install) | [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-shorts-remover.user.js)  |
 |  [GitHub Vibe Coded Notifier](https://github.com/MrChuw/UserScripts#vibe-code-notify-install)  |    [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/vibe-code-notify.user.js)     |
 |   [Youtube Music Quick Add](https://github.com/MrChuw/UserScripts#youtube-music-quick-add)    | [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-music-quick-add.user.js) |
-|   [Youtube Music Quick Add](https://github.com/MrChuw/UserScripts#screenshot)    | [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/screenshot.user.js) |
+|   [Screenshot](https://github.com/MrChuw/UserScripts#screenshot)    | [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/screenshot.user.js) |
 
 ---
 
