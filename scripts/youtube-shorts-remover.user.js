@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Youtube short remover
 // @namespace    http://tampermonkey.net/
-// @version      base.1.4
+// @version      base.1.5
 // @description  Removes Youtube shorts from search results and watch page, but without a configuration menu.
 // @author       MrChuw
 // @author       Mr_Comand
@@ -13,9 +13,10 @@
 // @grant        none
 // ==/UserScript==
 
+// Original: https://github.com/Mr-Comand/youtube-shorts-remover-tampermonkey
 
 (function () {
-    'use strict';
+    "use strict";
     // Configuration variables with default values
     var config = {
         c_removeFormStartPage: true,
@@ -28,7 +29,7 @@
         c_disableShortPageScrolling: true,
         c_removeFormSearch: true,
         c_sendHome: false,
-        c_consoleColor: '#33bd52',
+        c_consoleColor: "#33bd52",
     };
     log("Configuration:");
     log("c_removeFormStartPage", config.c_removeFormStartPage);
@@ -45,8 +46,8 @@
     log("============================");
 
     function log(...args) {
-        const message = args.map(arg => String(arg)).join(' ');
-        console.log('%c[ShortsRemover] ' + message, 'color: ' + config.c_consoleColor);
+        const message = args.map((arg) => String(arg)).join(" ");
+        console.log("%c[ShortsRemover] " + message, "color: " + config.c_consoleColor);
     }
 
     // Define the regex pattern for the YouTube start page
@@ -64,7 +65,6 @@
     //https://www.youtube.com/watch?v=*
     var youtubeWatchPagePattern = /^https?:\/\/(www\.)?youtube\.com\/watch\/?.*$/;
 
-
     // Define the regex pattern for the YouTube shorts pages
     //https://www.youtube.com/shorts/*
     var youtubeShortPagePattern = /^https?:\/\/(?:www\.)?youtube\.com\/shorts\/([^/?#]+)/;
@@ -75,16 +75,17 @@
 
     // Define the regex pattern for the YouTube channel pages
     //https://www.youtube.com/LinusTechTips or https://www.youtube.com/@LinusTechTips ...
-    var youtubeChannelPagePattern = /^https?:\/\/(www\.)?youtube\.com\/(?!feed.*)(?!watch.*)(?!short.*)(?!playlist.*)(?!podcasts.*)(?!gaming.*)(?!results.*).+$/;
+    var youtubeChannelPagePattern =
+        /^https?:\/\/(www\.)?youtube\.com\/(?!feed.*)(?!watch.*)(?!short.*)(?!playlist.*)(?!podcasts.*)(?!gaming.*)(?!results.*).+$/;
     // Define the regex pattern for the YouTube channel short pages
     //https://www.youtube.com/LinusTechTips/shorts or https://www.youtube.com/@LinusTechTips/shorts ...
-    var youtubeChannelShortsPagePattern = /^(https?:\/\/(?:www\.)?youtube\.com\/(?!feed.*)(?!watch.*)(?!short.*)(?!playlist.*)(?!podcasts.*)(?!gaming.*)(?!results.*).+)\/shorts\/?$/;
+    var youtubeChannelShortsPagePattern =
+        /^(https?:\/\/(?:www\.)?youtube\.com\/(?!feed.*)(?!watch.*)(?!short.*)(?!playlist.*)(?!podcasts.*)(?!gaming.*)(?!results.*).+)\/shorts\/?$/;
 
     if (config.c_disableShortPageScrolling) {
         // Function to handle the custom scroll event
         function handleScroll(event) {
             if (youtubeShortPagePattern.test(window.location.href)) {
-
                 // Your custom scroll handling code goes here
                 log("Scrolling is disabled.");
                 sendToHome();
@@ -93,12 +94,11 @@
                 // Add a scroll listener to the window
             }
         }
-        window.addEventListener('scroll', handleScroll);
-        window.addEventListener('wheel', handleScroll);
+        window.addEventListener("scroll", handleScroll);
+        window.addEventListener("wheel", handleScroll);
     }
 
     function removeShorts() {
-
         // Get the current URL
         var currentURL = window.location.href;
         if (config.c_removeSidebar) {
@@ -163,26 +163,27 @@
             removeByUrl();
             return;
         }
-
     }
-
 
     // Remove shorts on videoOverview
     function removeFormVideoOverview() {
         // Select all elements with a specific attribute
-        var elementsToRemove = document.querySelectorAll('[is-shorts],[is-reel-item-style-avatar-circle],ytd-reel-item-renderer');
+        var elementsToRemove = document.querySelectorAll(
+            "[is-shorts],[is-reel-item-style-avatar-circle],ytd-reel-item-renderer",
+        );
 
         // Loop through each selected element and remove it
         elementsToRemove.forEach(function (element) {
             element.parentNode.removeChild(element);
         });
-
     }
 
     //Remove Sidebar Element Shorts
     function removeSidebarElement() {
         // Select all elements with a title Shorts and specific class names
-        var elementsToRemove = document.querySelectorAll('.yt-simple-endpoint.style-scope.ytd-guide-entry-renderer[title="Shorts"]');
+        var elementsToRemove = document.querySelectorAll(
+            '.yt-simple-endpoint.style-scope.ytd-guide-entry-renderer[title="Shorts"]',
+        );
 
         // Loop through each selected element and remove the parent
         elementsToRemove.forEach(function (element) {
@@ -190,11 +191,10 @@
         });
     }
 
-
     //Remove shorts from video recommendations of a video
     function removeReelShelfRenderer() {
         // Select all "ytd-reel-shelf-renderer" elements
-        var elementsToRemove = document.querySelectorAll('ytd-reel-shelf-renderer,grid-shelf-view-model');
+        var elementsToRemove = document.querySelectorAll("ytd-reel-shelf-renderer,grid-shelf-view-model");
 
         // Loop through each selected element and remove it
         elementsToRemove.forEach(function (element) {
@@ -214,16 +214,18 @@
         if (config.c_sendHome) {
             window.location.href = "https://www.youtube.com/";
         } else {
-            window.location.href = window.location.href.replace(youtubeShortPagePattern, "https://www.youtube.com/watch?v=$1");
+            window.location.href = window.location.href.replace(
+                youtubeShortPagePattern,
+                "https://www.youtube.com/watch?v=$1",
+            );
         }
     }
-
 
     let progress = null;
     let timeoutId;
     function handleMutations(mutationsList, observer) {
         if (progress == null) {
-            progress = document.querySelector('yt-page-navigation-progress>#progress');
+            progress = document.querySelector("yt-page-navigation-progress>#progress");
             if (progress != null) {
                 observer.observe(progress, config_observer);
                 log("Added observer");
@@ -249,32 +251,34 @@
                 break;
             }
             //console.log('Changes detected',mutation.type, mutation.target,mutation);
-            if (mutation.target.parentElement == null) { } else
-                if (mutation.target.parentElement.id === "page-manager" || (mutation.target.parentElement.id == "primary")) {
-                    // console.log('Changes detected', mutationsList);
-                    //console.log('Changes detected in ytd-page-manager');
-                    // Your code to execute when ytd-page-manager changes goes here
-                    clearTimeout(timeoutId);
-                    timeoutId = setTimeout(() => {
-                        // Run your script here after all changes are done
-                        removeShorts();
-                        log("All Shorts are removed, detected by page-manager.");
-                    }, 500); // Adjust the timeout duration as needed
-                    //end loop if one change is a direct child of #page-manager
-                    break;
-                }
+            if (mutation.target.parentElement == null) {
+            } else if (
+                mutation.target.parentElement.id === "page-manager" ||
+                mutation.target.parentElement.id == "primary"
+            ) {
+                // console.log('Changes detected', mutationsList);
+                //console.log('Changes detected in ytd-page-manager');
+                // Your code to execute when ytd-page-manager changes goes here
+                clearTimeout(timeoutId);
+                timeoutId = setTimeout(() => {
+                    // Run your script here after all changes are done
+                    removeShorts();
+                    log("All Shorts are removed, detected by page-manager.");
+                }, 500); // Adjust the timeout duration as needed
+                //end loop if one change is a direct child of #page-manager
+                break;
+            }
         }
     }
-
 
     // Create a MutationObserver instance
     const observer = new MutationObserver(handleMutations);
 
     // Select the target node
-    const targetNode = document.querySelector('#page-manager');
+    const targetNode = document.querySelector("#page-manager");
     // yt-page-navigation-progress#progress
     // Options for the observer (which mutations to observe)
-    const config_observer = { childList: true, attributes: true, subtree: true, };
+    const config_observer = { childList: true, attributes: true, subtree: true };
     // Start observing the target node for configured mutations
     observer.observe(targetNode, config_observer);
 

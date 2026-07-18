@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Auto Reload High Latency
 // @namespace       http://tampermonkey.net/
-// @version         1.0.0
+// @version         1.0.1
 // @description     Used to automatic reload twitch stream if the latency pass a certain threshold
 // @author          MrChuw
 // @match           https://www.twitch.tv/*
@@ -16,7 +16,6 @@
 const MAX_LATENCY = 60.0;
 const COOLDOWN_MS = 5000;
 const ENABLE_LOG = False;
-
 
 // 1. Open menu
 document.querySelector('[data-a-target="player-settings-button"]')?.click();
@@ -53,35 +52,65 @@ function readStatByIndex(index) {
 }
 
 let lastReload = 0;
-function readDownloadResolution()     { return readStatByIndex(0); }
-function readRenderResolution()       { return readStatByIndex(1); }
-function readViewportResolution()     { return readStatByIndex(2); }
+function readDownloadResolution() {
+    return readStatByIndex(0);
+}
+function readRenderResolution() {
+    return readStatByIndex(1);
+}
+function readViewportResolution() {
+    return readStatByIndex(2);
+}
 
-function readBitrate()                { return readStatByIndex(3); }
-function readEstimatedBandwidth()     { return readStatByIndex(4); }
-function readDroppedFrames()          { return readStatByIndex(5); }
-function readBufferSize()             { return readStatByIndex(6); }
+function readBitrate() {
+    return readStatByIndex(3);
+}
+function readEstimatedBandwidth() {
+    return readStatByIndex(4);
+}
+function readDroppedFrames() {
+    return readStatByIndex(5);
+}
+function readBufferSize() {
+    return readStatByIndex(6);
+}
 
-function readStreamerLatency()        { return readStatByIndex(7); }
+function readStreamerLatency() {
+    return readStatByIndex(7);
+}
 
-function readCodecs()                 { return readStatByIndex(8); }
-function readProtocol()               { return readStatByIndex(9); }
-function readLatencyMode()            { return readStatByIndex(10); }
-function readRenderArea()             { return readStatByIndex(11); }
+function readCodecs() {
+    return readStatByIndex(8);
+}
+function readProtocol() {
+    return readStatByIndex(9);
+}
+function readLatencyMode() {
+    return readStatByIndex(10);
+}
+function readRenderArea() {
+    return readStatByIndex(11);
+}
 
-function readBackendVersion()         { return readStatByIndex(12); }
-function readPlaybackSessionID()      { return readStatByIndex(13); }
-function readAdID()                   { return readStatByIndex(14); }
+function readBackendVersion() {
+    return readStatByIndex(12);
+}
+function readPlaybackSessionID() {
+    return readStatByIndex(13);
+}
+function readAdID() {
+    return readStatByIndex(14);
+}
 
 function log(...args) {
-        if (ENABLE_LOG) {
-            console.log('[Reload High Latency]', ...args);
-        }
+    if (ENABLE_LOG) {
+        console.log("[Reload High Latency]", ...args);
     }
+}
 
 function readLatency() {
     const statValues = document.querySelectorAll(
-        'tr[data-a-target="player-overlay-video-stats-row"] td:nth-child(2) p[aria-roledescription="video player stat"]'
+        'tr[data-a-target="player-overlay-video-stats-row"] td:nth-child(2) p[aria-roledescription="video player stat"]',
     );
 
     for (const el of statValues) {
@@ -110,7 +139,6 @@ function reloadPlayer() {
     }
 }
 
-
 setInterval(() => {
     const latency = readLatency();
 
@@ -119,15 +147,10 @@ setInterval(() => {
 
         const now = Date.now();
 
-        if (latency >= MAX_LATENCY && (now - lastReload) >= COOLDOWN_MS) {
+        if (latency >= MAX_LATENCY && now - lastReload >= COOLDOWN_MS) {
             console.warn("High latency! Restarting player...");
             lastReload = now;
             reloadPlayer();
         }
     }
 }, 1000);
-
-
-
-
-

@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name            Auto VTT Downloader
 // @namespace       http://tampermonkey.net/
-// @version         1.5
+// @version         1.5.1
 // @description     Automatically downloads VTT files loaded on the page, avoiding duplicates. Supports dynamic domain list from URL.
 // @author          MrChuw
 // @match           *://*/*
@@ -13,8 +13,8 @@
 // @tag             subtitles
 // ==/UserScript==
 
-(function() {
-    'use strict';
+(function () {
+    "use strict";
 
     const ENABLE_LOG = false;
 
@@ -25,80 +25,80 @@
     let allowedDomains = [];
 
     function log(...args) {
-        if (ENABLE_LOG) console.log('[VTT Downloader]', ...args);
+        if (ENABLE_LOG) console.log("[VTT Downloader]", ...args);
     }
 
     function isAllowedUrl(url) {
-        return allowedDomains.some(domain => url.startsWith(domain));
+        return allowedDomains.some((domain) => url.startsWith(domain));
     }
 
     function isVttFile(url) {
-        return url.toLowerCase().endsWith('.vtt');
+        return url.toLowerCase().endsWith(".vtt");
     }
 
     function getFileName(url) {
-        return url.split('/').pop();
+        return url.split("/").pop();
     }
 
     function downloadFile(url) {
         if (!isAllowedUrl(url)) {
-            log('URL not allowed:', url);
+            log("URL not allowed:", url);
             return;
         }
         if (!isVttFile(url)) {
-            log('Not a VTT file:', url);
+            log("Not a VTT file:", url);
             return;
         }
 
         const fileName = getFileName(url);
-        console.log('Downloading VTT file:', fileName);
+        console.log("Downloading VTT file:", fileName);
         try {
             GM_download({
                 url: url,
                 name: fileName,
-                onerror: function(err) {
-                    log('Error with GM_download, attempting fallback:', err);
+                onerror: function (err) {
+                    log("Error with GM_download, attempting fallback:", err);
                     fallbackDownload(url);
-                }
+                },
             });
         } catch (e) {
-            log('Error calling GM_download:', e);
+            log("Error calling GM_download:", e);
             fallbackDownload(url);
         }
     }
 
     function fallbackDownload(url) {
         GM_xmlhttpRequest({
-            method: 'GET',
+            method: "GET",
             url: url,
-            responseType: 'blob',
-            onload: function(response) {
+            responseType: "blob",
+            onload: function (response) {
                 if (response.status === 200) {
-                    const blob = new Blob([response.response], { type: 'text/vtt' });
-                    const a = document.createElement('a');
+                    const blob = new Blob([response.response], { type: "text/vtt" });
+                    const a = document.createElement("a");
                     a.href = URL.createObjectURL(blob);
                     a.download = getFileName(url);
                     document.body.appendChild(a);
                     a.click();
                     document.body.removeChild(a);
                 } else {
-                    log('Failed to download using GM_xmlhttpRequest:', response);
+                    log("Failed to download using GM_xmlhttpRequest:", response);
                 }
-            }
+            },
         });
     }
 
     function interceptFetch() {
         const originalFetch = window.fetch;
-        window.fetch = async function(resource, options) {
-            if (typeof resource === 'string' && isVttFile(resource) && isAllowedUrl(resource)) {
+        window.fetch = async function (resource, options) {
+            if (typeof resource === "string" && isVttFile(resource) && isAllowedUrl(resource)) {
                 const fileName = getFileName(resource);
                 if (!downloadedFiles.has(resource)) {
                     downloadedFiles.add(resource);
-                    log('Intercepting fetch to download VTT:', fileName);
+                    log("Intercepting fetch to download VTT:", fileName);
                     downloadFile(resource);
                 } else {
-                    console.log('VTT file already downloaded:', fileName);
+                    console.log("VTT file already downloaded:", fileName);
                 }
             }
             return originalFetch.apply(this, arguments);
@@ -107,16 +107,16 @@
 
     function interceptXHR() {
         const originalOpen = XMLHttpRequest.prototype.open;
-        XMLHttpRequest.prototype.open = function(method, url) {
-            const originalUrl = typeof url === 'string' ? url : this.url;
-            if (typeof originalUrl === 'string' && isVttFile(originalUrl) && isAllowedUrl(originalUrl)) {
+        XMLHttpRequest.prototype.open = function (method, url) {
+            const originalUrl = typeof url === "string" ? url : this.url;
+            if (typeof originalUrl === "string" && isVttFile(originalUrl) && isAllowedUrl(originalUrl)) {
                 const fileName = getFileName(originalUrl);
                 if (!downloadedFiles.has(originalUrl)) {
                     downloadedFiles.add(originalUrl);
-                    log('Intercepting XHR to download VTT:', fileName);
+                    log("Intercepting XHR to download VTT:", fileName);
                     downloadFile(originalUrl);
                 } else {
-                    console.log('VTT file already downloaded:', fileName);
+                    console.log("VTT file already downloaded:", fileName);
                 }
             }
             return originalOpen.apply(this, arguments);
@@ -127,29 +127,29 @@
         if (Array.isArray(allowedDomainsSource)) {
             allowedDomains = allowedDomainsSource;
             callback();
-        } else if (typeof allowedDomainsSource === 'string') {
-            log('Fetching allowed domains from remote source...');
+        } else if (typeof allowedDomainsSource === "string") {
+            log("Fetching allowed domains from remote source...");
             GM_xmlhttpRequest({
-                method: 'GET',
+                method: "GET",
                 url: allowedDomainsSource,
-                onload: function(response) {
+                onload: function (response) {
                     if (response.status === 200) {
                         allowedDomains = response.responseText
-                        .split('\n')
-                        .map(line => line.trim())
-                        .filter(line => line.length && !line.startsWith('#'));
-                        log('Loaded allowed domains:', allowedDomains);
+                            .split("\n")
+                            .map((line) => line.trim())
+                            .filter((line) => line.length && !line.startsWith("#"));
+                        log("Loaded allowed domains:", allowedDomains);
                         callback();
                     } else {
-                        log('Failed to load allowed domains. Status:', response.status);
+                        log("Failed to load allowed domains. Status:", response.status);
                     }
                 },
-                onerror: function(err) {
-                    log('Error fetching allowed domains:', err);
-                }
+                onerror: function (err) {
+                    log("Error fetching allowed domains:", err);
+                },
             });
         } else {
-            log('Invalid allowedDomainsSource. Must be array or URL string.');
+            log("Invalid allowedDomainsSource. Must be array or URL string.");
         }
     }
 

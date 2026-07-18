@@ -6,13 +6,15 @@ This is a collection of userscript that I have created myself or modified to fit
 
 To use any script install an extension such as [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/), then click “Install” in the table below.
 
-|                                             script                                             |                                             install                                              |
-| :--------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------: |
-|   [Better Twitch Player](https://github.com/MrChuw/UserScripts#better-twitch-player-install)   |  [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/better-twitch-player.user.js)  |
-|  [Location Guard (No UI)](https://github.com/MrChuw/UserScripts#location-guard-no-ui-install)  |     [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/location-guard.user.js)     |
-|    [Auto VTT Downloader](https://github.com/MrChuw/UserScripts#auto-vtt-downloader-install)    |  [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/auto-vtt-downloader.user.js)   |
-| [YouTube Shorts Remover](https://github.com/MrChuw/UserScripts#youtube-shorts-remover-install) | [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-shorts-remover.user.js) |
-|  [GitHub Vibe Coded Notifier](https://github.com/MrChuw/UserScripts#vibe-code-notify-install)  |    [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/vibe-code-notify.user.js)    |
+|                                             script                                             |                                              install                                              |
+| :--------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: |
+|   [Better Twitch Player](https://github.com/MrChuw/UserScripts#better-twitch-player-install)   |  [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/better-twitch-player.user.js)   |
+|  [Location Guard (No UI)](https://github.com/MrChuw/UserScripts#location-guard-no-ui-install)  |     [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/location-guard.user.js)      |
+|    [Auto VTT Downloader](https://github.com/MrChuw/UserScripts#auto-vtt-downloader-install)    |   [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/auto-vtt-downloader.user.js)   |
+| [YouTube Shorts Remover](https://github.com/MrChuw/UserScripts#youtube-shorts-remover-install) | [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-shorts-remover.user.js)  |
+|  [GitHub Vibe Coded Notifier](https://github.com/MrChuw/UserScripts#vibe-code-notify-install)  |    [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/vibe-code-notify.user.js)     |
+|   [Youtube Music Quick Add](https://github.com/MrChuw/UserScripts#youtube-music-quick-add)    | [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-music-quick-add.user.js) |
+|   [Youtube Music Quick Add](https://github.com/MrChuw/UserScripts#screenshot)    | [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/screenshot.user.js) |
 
 ---
 
@@ -21,7 +23,7 @@ To use any script install an extension such as [Tampermonkey](https://www.tamper
 This script is made to simulate [Alternate Player for Twitch.tv](https://chromewebstore.google.com/detail/alternate-player-for-twit/bhplkbgoehhhddaoolmakpocnenplmhf) ([Firefox](https://addons.mozilla.org/en-US/firefox/addon/twitch_5/))  
 By replacing the scroll and middle click behavior, to increase/decrease or mute volume.  
 Automatically entering Theater Mode and Changing resolutions to source.  
-I recommend using ```https://player.twitch.tv/?channel=streamernamehere&parent=twitch.tv``` to watch streams instead of the Twitch website itself.
+I recommend using `https://player.twitch.tv/?channel=streamernamehere&parent=twitch.tv` to watch streams instead of the Twitch website itself.
 
 ---
 
@@ -49,3 +51,15 @@ Its just a modified version of [YouTube Shorts Remover](https://github.com/Mr-Co
 “i used the AI to destroy the AI” - by Mm2PL
 
 Will analyze the github repo trying to find any slop config file.
+
+---
+
+## Youtube Music Quick Add ([Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-music-quick-add.user.js))
+
+Its a modified version of [Add to playlist shortcut for youtube music](https://greasyfork.org/en/scripts/544566-add-to-playlist-shortcut-for-youtube-music), with fixed elements and "multilingual" support.
+
+---
+
+## Screenshot ([Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/screenshot.user.js))
+
+Context Menu screenshot because the one that firefox has really bad scalling.

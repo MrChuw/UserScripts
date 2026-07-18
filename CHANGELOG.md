@@ -4,6 +4,10 @@
 
 ## auto-vtt-downloader.user.js
 
+### [0.1.1] - 2026-07-17
+
+- Minor: Formatting change.
+
 ---
 
 ## better-twitch-player.user.js
@@ -24,9 +28,17 @@
 - Minor: Abstract Channel/Player check.
 - Minor: Remove Twitch button from player to prevent miss click and redirect to website.
 
+### [3.1.2] - 2026-07-17
+
+- Minor: Formatting change.
+
 ---
 
 ## location-guard.user.js
+
+### [0.2.3] - 2026-07-17
+
+- Minor: Formatting change.
 
 ---
 
@@ -40,6 +52,10 @@
 
 - Minor: Forgot to change the shorts url regex.
 
+### [base.1.5] - 2026-07-17
+
+- Minor: Formatting change.
+
 ---
 
 ## vibe-code-notify.user.js
@@ -47,5 +63,25 @@
 ### [1.0] - 2026-01-07
 
 - First commit.
+
+### [1.1] - 2026-07-17
+
+- Minor: Formatting change.
+
+---
+
+## screenshot.user.js
+
+### [0.1.0] - 2026-07-17
+
+- Minor: First commit.
+
+---
+
+## youtube-music-quick-add.user.js
+
+### [0.4.0] - 2026-07-17
+
+- Minor: First commit.
 
 ---
