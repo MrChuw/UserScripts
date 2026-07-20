@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Quick Playlist add
 // @namespace    http://tampermonkey.net/
-// @version      0.4.1
+// @version      0.4.2
 // @description  Use the P button to add the current song to a playlist
 // @author       MrChuw
 // @author       MagnusRE (modified)
