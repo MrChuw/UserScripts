@@ -1,14 +1,14 @@
 // ==UserScript==
 // @name         Screen Capture
 // @namespace    http://tampermonkey.net/
-// @version      0.1.2
+// @version      0.1.3
 // @author       MrChuw
 // @match        *://*/*
 // @run-at       document-end
 // @grant        GM_registerMenuCommand
 // @grant        GM_setClipboard
 // @grant        GM_notification
-// @require      https://cdn.jsdelivr.net/npm/@zumer/snapdom@2.16.0/dist/snapdom.min.js
+// @require      https://cdn.jsdelivr.net/npm/@zumer/snapdom@2.16.0/dist/snapdom.min.js#sha256=FVkPI8rxuK9zV+3V3/9mMT3Oqx6mk696upt0o1df1Co=
 // @updateURL    https://github.com/MrChuw/UserScripts/raw/main/scripts/screenshot.user.js
 // @downloadURL  https://github.com/MrChuw/UserScripts/raw/main/scripts/screenshot.user.js
 // ==/UserScript==
@@ -24,8 +24,12 @@
     };
 
     if (typeof snapdom === "undefined") {
-        console.error("Snapdom library not loaded.");
-        alert("❌ Snapdom failed to load. Please check the @require URL.");
+        console.error(
+            "Snapdom library failed to load. This may be due to an integrity hash mismatch, a network issue, or changes to the remote resource.",
+        );
+        alert(
+            "❌ Snapdom failed to load. The integrity hash verification or fetch request failed. Please check your network connection or contact the script maintainer.",
+        );
         return;
     }
 

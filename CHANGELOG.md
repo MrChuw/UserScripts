@@ -94,6 +94,10 @@
 - Minor: Attempting to register the commands last
 - Minor: Removing the alert() in help in favor of a html pop out for better readability.
 
+### [0.1.3] - 2026-07-20
+
+- Minor: Adding Subresource Integrity.
+
 ---
 
 ## youtube-music-quick-add.user.js
