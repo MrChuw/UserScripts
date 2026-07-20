@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Quick Playlist add
 // @namespace    http://tampermonkey.net/
-// @version      0.4.0
+// @version      0.4.1
 // @description  Use the P button to add the current song to a playlist
 // @author       MrChuw
 // @author       MagnusRE (modified)
@@ -128,7 +128,7 @@ async function waitForPlaylistModalAndClick(timeout = 3000) {
         "keydown",
         function (event) {
             // Ignore if it's not the P key or if inside a text field
-            if (event.Code !== 80) return;
+            if (event.key.toLowerCase() !== "p") return;
             const tag = document.activeElement.tagName;
             if (tag === "INPUT" || tag === "TEXTAREA") return;
 

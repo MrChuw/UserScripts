@@ -84,4 +84,8 @@
 
 - Minor: First commit.
 
+### [0.4.1] - 2026-07-20
+
+- Minor: Fix key code thing.
+
 ---
