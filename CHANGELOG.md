@@ -56,6 +56,10 @@
 
 - Minor: Formatting change.
 
+### [base.1.6] - 2026-07-17
+
+- Minor: Formatting change.
+
 ---
 
 ## vibe-code-notify.user.js
@@ -64,9 +68,13 @@
 
 - First commit.
 
-### [1.1] - 2026-07-17
+### [1.0.1] - 2026-07-17
 
 - Minor: Formatting change.
+
+### [1.0.2] - 2026-07-20
+
+- Minor: Fix download and update url.
 
 ---
 
@@ -75,6 +83,10 @@
 ### [0.1.0] - 2026-07-17
 
 - Minor: First commit.
+
+### [0.1.1] - 2026-07-20
+
+- Minor: Fix download and update url.
 
 ---
 
@@ -87,5 +99,9 @@
 ### [0.4.1] - 2026-07-20
 
 - Minor: Fix key code thing.
+
+### [0.4.2] - 2026-07-20
+
+- Minor: Fix download and update url.
 
 ---

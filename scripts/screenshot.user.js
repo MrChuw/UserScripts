@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Screen Capture
 // @namespace    http://tampermonkey.net/
-// @version      0.1.0
+// @version      0.1.1
 // @description  Professional screenshot options using Snapdom with robust clipboard fallback
 // @author       You
 // @match        *://*/*
@@ -10,8 +10,8 @@
 // @grant        GM_setClipboard
 // @grant        GM_notification
 // @require      https://cdn.jsdelivr.net/npm/@zumer/snapdom@2.16.0/dist/snapdom.min.js
-// @updateURL    https://raw.githubusercontent.com/MrChuw/UserScripts/raw/main/scripts/screenshot.user.js
-// @downloadURL  https://raw.githubusercontent.com/MrChuw/UserScripts/raw/main/scripts/screenshot.user.js
+// @updateURL    https://github.com/MrChuw/UserScripts/raw/main/scripts/screenshot.user.js
+// @downloadURL  https://github.com/MrChuw/UserScripts/raw/main/scripts/screenshot.user.js
 // ==/UserScript==
 
 (function () {

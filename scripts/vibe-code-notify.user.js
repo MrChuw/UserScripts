@@ -1,15 +1,15 @@
 // ==UserScript==
 // @name         GitHub Vibe Coded Notifier
 // @namespace    http://tampermonkey.net/
-// @version      1.0.1
+// @version      1.0.2
 // @description  Caches repository file lists to re-evaluate vibe-coded status when rules change.
 // @author       MrChuw
 // @match        https://github.com/*/*
 // @match        https://github.com/*/*/*
 // @grant        none
 // @run-at       document-idle
-// @updateURL    https://raw.githubusercontent.com/MrChuw/UserScripts/raw/main/scripts/vibe-code-notify.user.js
-// @downloadURL  https://raw.githubusercontent.com/MrChuw/UserScripts/raw/main/scripts/vibe-code-notify.user.js
+// @updateURL    https://github.com/MrChuw/UserScripts/raw/main/scripts/vibe-code-notify.user.js
+// @downloadURL  https://github.com/MrChuw/UserScripts/raw/main/scripts/vibe-code-notify.user.js
 // ==/UserScript==
 
 (function () {

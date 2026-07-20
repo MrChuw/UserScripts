@@ -7,8 +7,8 @@
 // @author       MagnusRE (modified)
 // @match        *://music.youtube.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=http://music.youtube.com
-// @updateURL    https://raw.githubusercontent.com/MrChuw/UserScripts/raw/main/scripts/youtube-music-quick-add.user.js
-// @downloadURL  https://raw.githubusercontent.com/MrChuw/UserScripts/raw/main/scripts/youtube-music-quick-add.user.js
+// @updateURL    https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-music-quick-add.user.js
+// @downloadURL  https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-music-quick-add.user.js
 // @license      MIT
 // ==/UserScript==
 

@@ -1,15 +1,15 @@
 // ==UserScript==
 // @name         Youtube short remover
 // @namespace    http://tampermonkey.net/
-// @version      base.1.5
+// @version      base.1.6
 // @description  Removes Youtube shorts from search results and watch page, but without a configuration menu.
 // @author       MrChuw
 // @author       Mr_Comand
 // @license      MIT
 // @match        https://www.youtube.com/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=youtube.com
-// @updateURL    https://raw.githubusercontent.com/MrChuw/UserScripts/raw/main/scripts/youtube-shorts-remover.user.js
-// @downloadURL  https://raw.githubusercontent.com/MrChuw/UserScripts/raw/main/scripts/youtube-shorts-remover.user.js
+// @updateURL    https://github.com/MrChuw/UserScripts/raw/main/scripts/scripts/youtube-shorts-remover.user.js
+// @downloadURL  https://github.com/MrChuw/UserScripts/raw/main/scripts/scripts/youtube-shorts-remover.user.js
 // @grant        none
 // ==/UserScript==
 
