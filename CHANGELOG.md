@@ -87,6 +87,12 @@
 ### [0.1.1] - 2026-07-20
 
 - Minor: Fix download and update url.
+- 
+### [0.1.2] - 2026-07-20
+
+- Minor: Using JPG by default.
+- Minor: Attempting to register the commands last
+- Minor: Removing the alert() in help in favor of a html pop out for better readability.
 
 ---
 
