@@ -6,15 +6,16 @@ This is a collection of userscript that I have created myself or modified to fit
 
 To use any script install an extension such as [Tampermonkey](https://www.tampermonkey.net/) or [Violentmonkey](https://violentmonkey.github.io/), then click “Install” in the table below.
 
-|                                             script                                             |                                              install                                              |
-| :--------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: |
-|   [Better Twitch Player](https://github.com/MrChuw/UserScripts#better-twitch-player-install)   |  [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/better-twitch-player.user.js)   |
-|  [Location Guard (No UI)](https://github.com/MrChuw/UserScripts#location-guard-no-ui-install)  |     [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/location-guard.user.js)      |
-|    [Auto VTT Downloader](https://github.com/MrChuw/UserScripts#auto-vtt-downloader-install)    |   [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/auto-vtt-downloader.user.js)   |
-| [YouTube Shorts Remover](https://github.com/MrChuw/UserScripts#youtube-shorts-remover-install) | [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-shorts-remover.user.js)  |
-|  [GitHub Vibe Coded Notifier](https://github.com/MrChuw/UserScripts#vibe-code-notify-install)  |    [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/vibe-code-notify.user.js)     |
-|   [Youtube Music Quick Add](https://github.com/MrChuw/UserScripts#youtube-music-quick-add-install)    | [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-music-quick-add.user.js) |
-|   [Screenshot](https://github.com/MrChuw/UserScripts#screenshot-install)    | [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/screenshot.user.js) |
+|                                              script                                              |                                              install                                              |
+| :----------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: |
+|    [Better Twitch Player](https://github.com/MrChuw/UserScripts#better-twitch-player-install)    |  [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/better-twitch-player.user.js)   |
+|   [Location Guard (No UI)](https://github.com/MrChuw/UserScripts#location-guard-no-ui-install)   |     [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/location-guard.user.js)      |
+|     [Auto VTT Downloader](https://github.com/MrChuw/UserScripts#auto-vtt-downloader-install)     |   [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/auto-vtt-downloader.user.js)   |
+|  [YouTube Shorts Remover](https://github.com/MrChuw/UserScripts#youtube-shorts-remover-install)  | [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-shorts-remover.user.js)  |
+|   [GitHub Vibe Coded Notifier](https://github.com/MrChuw/UserScripts#vibe-code-notify-install)   |    [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/vibe-code-notify.user.js)     |
+| [Youtube Music Quick Add](https://github.com/MrChuw/UserScripts#youtube-music-quick-add-install) | [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-music-quick-add.user.js) |
+|              [Screenshot](https://github.com/MrChuw/UserScripts#screenshot-install)              |       [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/screenshot.user.js)        |
+|   [Youtube Share Cleaner](https://github.com/MrChuw/UserScripts#youtube-share-cleaner-install)   |  [Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-share-cleaner.user.js)  |
 
 ---
 
@@ -63,3 +64,11 @@ Its a modified version of [Add to playlist shortcut for youtube music](https://g
 ## Screenshot ([Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/screenshot.user.js))
 
 Context Menu screenshot because the one that firefox has really bad scalling.
+
+---
+
+## Youtube Share Cleaner ([Install](https://github.com/MrChuw/UserScripts/raw/main/scripts/youtube-share-cleaner.user.js))
+
+Remove the tracking from youtube sharing link.
+
+---

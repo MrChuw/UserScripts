@@ -115,3 +115,12 @@
 - Minor: Fix download and update url.
 
 ---
+
+## youtube-music-quick-add.user.js
+
+### [0.2.2] - 2026-07-22
+
+- Minor: First commit.
+
+
+---
